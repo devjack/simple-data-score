@@ -1,0 +1,5 @@
+<phpunit bootstrap="../bootstrap.php">
+    <testsuite name="Test Suite for Simple Data Score - unit tests" >
+        <directory>../SdsTests</directory>
+    </testsuite>
+</phpunit>
