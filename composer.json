@@ -1,0 +1,19 @@
+{
+    "name": "sydnedrage/simple-data-score",
+    "descripton": "Simple library for applying weighted scores to arbitrary sets of similar data.",
+    "author": "Jack Skinner <sydnerdrage@gmail.com>",
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "satooshi/php-coveralls": "dev-master",
+        "squizlabs/php_codesniffer": "1.4.*@stable"
+    },
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sydnerdrage\\Sds\\": "src/",
+            "Sydnerdrage\\SdsTests\\": "tests/SdsTests/"
+        }
+    }
+}
