@@ -11,3 +11,5 @@ script:
  - cd tests/
  - ./dev-all-ci.sh
 
+after_script:
+ - ../vendor/bin/coveralls -v

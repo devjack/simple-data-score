@@ -2,6 +2,7 @@
 ## Apply numerical scores to data sets based on a series of rules and filters.
 
 [![Build Status](https://travis-ci.org/sydnerdrage/simple-data-score.svg?branch=master)](https://travis-ci.org/sydnerdrage/simple-data-score)
+[![Coverage Status](https://coveralls.io/repos/sydnerdrage/simple-data-score/badge.png)](https://coveralls.io/r/sydnerdrage/simple-data-score)
 
 ## Requirements
  - PHP 5.4+
