@@ -68,6 +68,11 @@ class DayTime {
             + $b->getHour() * self::MINUTES_IN_HOUR
             + $b->getMinute();
 
+        if($selfMinutes > $bMinutes) {
+            // I start before the other does
+            return min($bMinutes+$b->getDuration(), $selfMinutes+$this->getDuration()) - $selfMinutes;
+        }
+
         // Does this DayTime end overlap with the $b period?
         if($selfMinutes + $this->getDuration() < $bMinutes) {
             // No overlap - return 0;

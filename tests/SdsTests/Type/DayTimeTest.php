@@ -35,5 +35,14 @@ class DayTimeTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals(60, $a->overlap($b));
     }
 
+    public function testBackwardsOverlap()
+    {
+
+        $a = new DayTime(0, 10, 00, 60);
+        $b = new DayTime(0, 10, 30, 60);
+
+        $this->assertEquals(30, $b->overlap($a));
+    }
+
 }
  
