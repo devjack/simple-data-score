@@ -1,5 +1,5 @@
 {
-    "name": "sydnedrage/simple-data-score",
+    "name": "sydnerdrage/simple-data-score",
     "descripton": "Simple library for applying weighted scores to arbitrary sets of similar data.",
     "author": "Jack Skinner <sydnerdrage@gmail.com>",
     "require-dev": {
