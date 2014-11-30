@@ -14,6 +14,8 @@ class DayTime {
     protected $hour;
     protected $minute;
 
+    protected $duration;
+
     public static $days = [
         'Monday',
         'Tuesday',
@@ -24,13 +26,22 @@ class DayTime {
         'Sunday',
     ];
 
-    public function __construct($day, $hour, $minute) {
+
+    const MINUTES_IN_DAY = 1440;
+    const MINUTES_IN_HOUR = 60;
+
+    public function __construct($day, $hour, $minute, $duration) {
         $this->day = $day;
         $this->hour = $hour;
         $this->minute = $minute;
+        $this->duration = $duration;
     }
 
-    public function getDay()
+    public function getDay() {
+        return $this->day;
+    }
+
+    public function getDayOfWeek()
     {
         return self::$days[$this->day];
     }
@@ -43,4 +54,38 @@ class DayTime {
         return $this->minute;
     }
 
-} 
+    public function getDuration() {
+        return $this->duration;
+    }
+
+    public function overlap(DayTime $b) {
+        // Seconds from commencement of the week;
+        $selfMinutes = $this->getDay() * self::MINUTES_IN_DAY
+            + $this->getHour() * self::MINUTES_IN_HOUR
+            + $this->getMinute();
+
+        $bMinutes = $b->getDay() * self::MINUTES_IN_DAY
+            + $b->getHour() * self::MINUTES_IN_HOUR
+            + $b->getMinute();
+
+        // Does this DayTime end overlap with the $b period?
+        if($selfMinutes + $this->getDuration() < $bMinutes) {
+            // No overlap - return 0;
+            return 0;
+        }
+
+        $selfEnd = $selfMinutes + $this->getDuration();
+        $bEnd = $bMinutes + $b->getDuration();
+
+        if($selfEnd < $bEnd){
+            // I end before $b ends
+            return $bMinutes + ($bEnd - $selfEnd);
+        }
+
+        return $b->getDuration();
+
+
+
+    }
+
+}
