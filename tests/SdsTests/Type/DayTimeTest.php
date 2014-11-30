@@ -11,5 +11,12 @@ class DayTimeTest extends \PHPUnit_Framework_TestCase {
         $this->assertEquals("Monday", $dayTime->getDay());
     }
 
+    public function testGetters() {
+        $dayTime = new DayTime(2, 15, 25); // Midnight Monday morning
+        $this->assertEquals("Wednesday", $dayTime->getDay());
+        $this->assertEquals(15, $dayTime->getHour());
+        $this->assertEquals(25, $dayTime->getMinute());
+    }
+
 }
  
