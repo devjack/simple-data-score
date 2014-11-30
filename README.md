@@ -18,8 +18,7 @@ cd tests
 ```
 
 ## Usage
-See the unit test suites for intended usage for specific data sets.
-...  @todo ... update this section.
+See the sample data set and usage of the overlap calculator in SdsTests\Calc\OverlapTest
 
 ## Contributions
 If you'd like to make a contribution, please submit a pull request to <https://github.com/sydnerdrage/simple-data-score>
